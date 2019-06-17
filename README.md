@@ -20,6 +20,7 @@ Slashdot Article: [Here](https://yro.slashdot.org/story/19/06/16/2113216/researc
 
 I would highly encourage all users to switch their Venmo account to private by going to `Settings > Privacy` and selecting "Private" as well as `Past Transactions > Change All to Private`. Screenshot instructions are available [here](https://publicbydefault.fyi/#venmo).
 
+I tried to search transactions related to 15 of my friends' usernames in the dataset, I could find a total six transactions concerning them.
 
 ## Dataset Info
 
@@ -29,7 +30,7 @@ The dataset is in BSON form as it was exported from a MongoDB database. It has b
 * **Uncompressed size:** 10.87 GB
 * **Transaction Count:** 7,076,585
 
-Each transaction contains lots of information about the sender and receiver, but does not include dollar amounts. A sample transaction .json file is included as `sample.json`
+Each transaction contains lots of information about the sender and receiver, but does not include dollar amounts. A sample transaction .json file is included as `sample.json`.
 
 ## Download Dataset
 
@@ -43,6 +44,9 @@ You will need the following packages:
 * `multiprocessing` - To increase running speed.
 * `json` - To dump the results of the search into a file with JSON format.
 * `sys` - For the UI (progress bar).
+
+<br/>
+<br/>
 
 1. Install the necessary dependancies
 2. Extract .xz
