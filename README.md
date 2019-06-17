@@ -1,4 +1,4 @@
-# Venmo Transaction Dataset
+# Venmo Transaction Dataset - Find transactions relative to usernames
 
 ## What is this? 
 
@@ -10,12 +10,17 @@ This data was collected as part of a data analysis project and was scraped durin
 * October 2018
 * Jan 2019 - Feb 2019
 
-I am releasing this dataset in order to bring attention to Venmo users that all of this data is publicly available for anyone to grab without even an API key. There is some very valuable data here for any attacker conducting OSINT research. 
+I am releasing this dataset in order to bring attention to Venmo users that all of this data is publicly available for anyone to grab without even an API key. There is some very valuable data here for any attacker conducting OSINT research.
+
+You can use `venmo.py` to search for transactions made by specific users by providing their username.
+
+Slashdot Article: [Here](https://yro.slashdot.org/story/19/06/16/2113216/researcher-publishers-7-million-still-public-venmo-transactions-on-github)
 
 **Protect Yourself**
 
 I would highly encourage all users to switch their Venmo account to private by going to `Settings > Privacy` and selecting "Private" as well as `Past Transactions > Change All to Private`. Screenshot instructions are available [here](https://publicbydefault.fyi/#venmo).
 
+I tried to search transactions related to 15 of my friends' usernames in the dataset, I could find a total six transactions concerning them.
 
 ## Dataset Info
 
@@ -25,7 +30,7 @@ The dataset is in BSON form as it was exported from a MongoDB database. It has b
 * **Uncompressed size:** 10.87 GB
 * **Transaction Count:** 7,076,585
 
-Each transaction contains lots of information about the sender and receiver, but does not include dollar amounts. A sample transaction .json file is included as `sample.json`
+Each transaction contains lots of information about the sender and receiver, but does not include dollar amounts. A sample transaction .json file is included as `sample.json`.
 
 ## Download Dataset
 
@@ -33,7 +38,28 @@ Each transaction contains lots of information about the sender and receiver, but
 * **HTTPS:** [Here](https://d.badtech.xyz/venmo.tar.xz)
 
 ## Use This Dataset
-This dataset was exported from a MongoDB instance with the following settings:
+### Use This Dataset - My Script
+You will need the following packages:
+* `bson` - Install via: `conda install pymongo` or `pip install pymongo`
+* `multiprocessing` - To increase running speed.
+* `json` - To dump the results of the search into a file with JSON format.
+* `sys` - For the UI (progress bar).
+
+<br/>
+<br/>
+
+1. Install the necessary dependancies
+2. Extract .xz
+    * `tar xf venmo.tar.xz` 
+    * or with progress: `pv venmo.tar.xz | tar xf - -C extracted/ --xz`
+3. Restore the dump at the level of the `venmo.py` script
+4. Change `trackedUsernames` variable in the `venmo.py` script
+5. Run the script and check results in `results.py`
+
+
+
+### Use This Dataset - Original Poster advices
+Initially, this dataset was exported from a MongoDB instance with the following settings:
 * Database name: `test`
 * Collection name: `venmo`
 
@@ -44,7 +70,6 @@ This dataset was exported from a MongoDB instance with the following settings:
     * or with progress: `pv venmo.tar.xz | tar xf - -C extracted/ --xz`
 3. Restore dump
     * `mongorestore --collection venmo --db test venmo.bson`
-
 
 
 
