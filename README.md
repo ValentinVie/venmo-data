@@ -14,6 +14,8 @@ I am releasing this dataset in order to bring attention to Venmo users that all 
 
 You can use `venmo.py` to search for transactions made by specific users by providing their username.
 
+Slashdot Article: [Here](https://yro.slashdot.org/story/19/06/16/2113216/researcher-publishers-7-million-still-public-venmo-transactions-on-github)
+
 **Protect Yourself**
 
 I would highly encourage all users to switch their Venmo account to private by going to `Settings > Privacy` and selecting "Private" as well as `Past Transactions > Change All to Private`. Screenshot instructions are available [here](https://publicbydefault.fyi/#venmo).
