@@ -1,4 +1,4 @@
-# Venmo Transaction Dataset - Find transactions relative to usernames
+# Venmo Transaction Dataset - Find Transactions Relative to Usernames
 
 ## What is this? 
 
